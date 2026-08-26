@@ -1,0 +1,389 @@
+/* ============================================
+   MODERN BEAUTIFUL BACKGROUNDS
+   ============================================ */
+
+/* ===== OPTION 1: ANIMATED GRADIENT MESH (RECOMMENDED) ===== */
+.modern-bg-gradient-mesh {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: linear-gradient(to bottom, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
+    overflow: hidden;
+}
+
+.modern-bg-gradient-mesh::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(circle at 20% 20%, rgba(108, 99, 255, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(78, 205, 196, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 40% 60%, rgba(0, 217, 255, 0.10) 0%, transparent 40%),
+        radial-gradient(circle at 70% 30%, rgba(108, 99, 255, 0.08) 0%, transparent 40%);
+    animation: gradientShift 20s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+        transform: translate(5%, 5%) rotate(120deg);
+    }
+    66% {
+        transform: translate(-5%, 5%) rotate(240deg);
+    }
+}
+
+/* ===== OPTION 2: GEOMETRIC PATTERNS ===== */
+.modern-bg-geometric {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-color: #0f0f1e;
+    background-image: 
+        linear-gradient(30deg, rgba(108, 99, 255, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(108, 99, 255, 0.05) 87.5%, rgba(108, 99, 255, 0.05)),
+        linear-gradient(150deg, rgba(108, 99, 255, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(108, 99, 255, 0.05) 87.5%, rgba(108, 99, 255, 0.05)),
+        linear-gradient(30deg, rgba(108, 99, 255, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(108, 99, 255, 0.05) 87.5%, rgba(108, 99, 255, 0.05)),
+        linear-gradient(150deg, rgba(108, 99, 255, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(108, 99, 255, 0.05) 87.5%, rgba(108, 99, 255, 0.05)),
+        linear-gradient(60deg, rgba(78, 205, 196, 0.05) 25%, transparent 25.5%, transparent 75%, rgba(78, 205, 196, 0.05) 75%, rgba(78, 205, 196, 0.05)),
+        linear-gradient(60deg, rgba(78, 205, 196, 0.05) 25%, transparent 25.5%, transparent 75%, rgba(78, 205, 196, 0.05) 75%, rgba(78, 205, 196, 0.05));
+    background-size: 80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+    animation: geometricMove 30s linear infinite;
+}
+
+@keyframes geometricMove {
+    0% {
+        background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+    }
+    100% {
+        background-position: 80px 140px, 80px 140px, 120px 210px, 120px 210px, 80px 140px, 120px 210px;
+    }
+}
+
+/* ===== OPTION 3: GLOWING GRID ===== */
+.modern-bg-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-color: #0f0f1e;
+    background-image: 
+        linear-gradient(rgba(108, 99, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(108, 99, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center center;
+}
+
+.modern-bg-grid::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(108, 99, 255, 0.15) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    animation: gridPulse 4s ease-in-out infinite;
+}
+
+@keyframes gridPulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+/* ===== OPTION 4: FLOATING ORBS (PREMIUM) ===== */
+.modern-bg-orbs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #16213e 100%);
+    overflow: hidden;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    mix-blend-mode: screen;
+}
+
+.orb-1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #6C63FF 0%, transparent 70%);
+    top: -200px;
+    left: -200px;
+    animation: orbFloat1 25s ease-in-out infinite;
+}
+
+.orb-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #4ECDC4 0%, transparent 70%);
+    top: 50%;
+    right: -250px;
+    animation: orbFloat2 30s ease-in-out infinite;
+}
+
+.orb-3 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, #00D9FF 0%, transparent 70%);
+    bottom: -175px;
+    left: 30%;
+    animation: orbFloat3 20s ease-in-out infinite;
+}
+
+@keyframes orbFloat1 {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(150px, 150px);
+    }
+}
+
+@keyframes orbFloat2 {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-150px, -100px);
+    }
+}
+
+@keyframes orbFloat3 {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(100px, -150px);
+    }
+}
+
+/* ===== OPTION 5: AURORA BOREALIS EFFECT ===== */
+.modern-bg-aurora {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: #0f0f1e;
+    overflow: hidden;
+}
+
+.aurora-layer {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    top: 0;
+    left: -50%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(108, 99, 255, 0.1) 25%,
+        rgba(78, 205, 196, 0.15) 50%,
+        rgba(0, 217, 255, 0.1) 75%,
+        transparent 100%
+    );
+    animation: auroraMove 15s linear infinite;
+    filter: blur(40px);
+}
+
+.aurora-layer:nth-child(2) {
+    animation-duration: 20s;
+    animation-direction: reverse;
+    opacity: 0.6;
+}
+
+.aurora-layer:nth-child(3) {
+    animation-duration: 25s;
+    opacity: 0.4;
+}
+
+@keyframes auroraMove {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(50%);
+    }
+}
+
+/* ===== OPTION 6: SCANLINE TECH EFFECT ===== */
+.modern-bg-scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: linear-gradient(to bottom, #0f0f1e 0%, #1a1a2e 100%);
+}
+
+.modern-bg-scanlines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(108, 99, 255, 0.03) 2px,
+        rgba(108, 99, 255, 0.03) 4px
+    );
+    animation: scanlineMove 10s linear infinite;
+    pointer-events: none;
+}
+
+.modern-bg-scanlines::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(
+        circle,
+        rgba(78, 205, 196, 0.1) 0%,
+        transparent 70%
+    );
+    transform: translate(-50%, -50%);
+    animation: scanPulse 3s ease-in-out infinite;
+}
+
+@keyframes scanlineMove {
+    0% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes scanPulse {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* ===== OPTION 7: PERLIN NOISE INSPIRED ===== */
+.modern-bg-noise {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background: 
+        radial-gradient(circle at 20% 30%, #1a1a3e 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, #1e2a4a 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, #1a2642 0%, transparent 50%),
+        linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+    animation: noiseMove 30s ease-in-out infinite;
+}
+
+.modern-bg-noise::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    opacity: 0.4;
+}
+
+@keyframes noiseMove {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* ===== MOBILE OPTIMIZATIONS ===== */
+@media (max-width: 768px) {
+    .modern-bg-gradient-mesh::before,
+    .modern-bg-geometric,
+    .orb,
+    .aurora-layer {
+        animation-duration: 40s; /* Slower on mobile for performance */
+    }
+    
+    .orb {
+        filter: blur(60px); /* Less blur on mobile */
+    }
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+    .modern-bg-gradient-mesh::before,
+    .modern-bg-geometric,
+    .modern-bg-grid::before,
+    .orb,
+    .aurora-layer,
+    .modern-bg-scanlines::before,
+    .modern-bg-scanlines::after,
+    .modern-bg-noise {
+        animation: none !important;
+    }
+}
+
+/* ===== OPTION 8: MINIMAL DOT MATRIX (FAST) ===== */
+.modern-bg-dots {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-color: #0f0f1e;
+    overflow: hidden;
+}
+
+.modern-bg-dots::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(108, 99, 255, 0.25) 2px, transparent 2px);
+    background-size: 35px 35px;
+    background-position: center center;
+    pointer-events: none;
+    z-index: 10;
+}
+

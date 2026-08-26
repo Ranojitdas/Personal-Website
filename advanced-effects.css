@@ -1,0 +1,589 @@
+/* ============================================
+   ADVANCED EFFECTS - EXTRAORDINARY PORTFOLIO
+   ============================================ */
+
+/* ===== CUSTOM CURSOR (SIMPLIFIED) ===== */
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+    opacity: 0.8;
+    mix-blend-mode: difference;
+}
+
+/* Large hover for buttons and cards */
+.custom-cursor.cursor-hover {
+    width: 40px;
+    height: 40px;
+    opacity: 0.5;
+}
+
+/* Small hover for navigation links */
+.custom-cursor.cursor-nav {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+}
+
+/* Hide default cursor on desktop */
+@media (min-width: 769px) {
+    body, a, button {
+    }
+}
+
+/* ===== SCROLL PROGRESS BAR ===== */
+.scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: var(--gradient-accent);
+    z-index: 9999;
+    transition: width 0.1s ease;
+    box-shadow: 0 2px 10px rgba(78, 205, 196, 0.5);
+}
+
+/* ===== GRADIENT BLOBS ===== */
+.gradient-blobs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.gradient-blob {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.3;
+    animation: blobFloat 20s infinite ease-in-out;
+}
+
+.gradient-blob:nth-child(1) {
+    background: radial-gradient(circle, #6C63FF 0%, transparent 70%);
+    top: -250px;
+    left: -250px;
+    animation-delay: 0s;
+}
+
+.gradient-blob:nth-child(2) {
+    background: radial-gradient(circle, #4ECDC4 0%, transparent 70%);
+    top: 50%;
+    right: -250px;
+    animation-delay: 7s;
+}
+
+.gradient-blob:nth-child(3) {
+    background: radial-gradient(circle, #00D9FF 0%, transparent 70%);
+    bottom: -250px;
+    left: 50%;
+    animation-delay: 14s;
+}
+
+@keyframes blobFloat {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(100px, -100px) scale(1.1);
+    }
+    66% {
+        transform: translate(-100px, 100px) scale(0.9);
+    }
+}
+
+/* ===== RIPPLE EFFECT ===== */
+.ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: ripple 0.6s ease-out;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* Enable ripple container */
+.cta-button, button, .project-card {
+    position: relative;
+    overflow: hidden;
+}
+
+/* ===== TEXT REVEAL ANIMATION ===== */
+.reveal-text {
+    overflow: hidden;
+}
+
+.reveal-word {
+    display: inline-block;
+    opacity: 0;
+    animation: revealWord 0.8s forwards;
+}
+
+@keyframes revealWord {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== ANIMATED COUNTER ===== */
+[data-count] {
+    font-size: 3rem;
+    font-weight: 800;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ===== ENHANCED CARD HOVER EFFECTS ===== */
+.project-card, .skill-card, .achievement-card {
+    transform-style: preserve-3d;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(108, 99, 255, 0) 0%,
+        rgba(78, 205, 196, 0.1) 50%,
+        rgba(0, 217, 255, 0) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.project-card:hover::after,
+.skill-card:hover::after,
+.achievement-card:hover::after {
+    opacity: 1;
+}
+
+/* ===== GLOWING BORDERS ON HOVER ===== */
+.project-card:hover,
+.skill-card:hover,
+.achievement-card:hover {
+    box-shadow: 
+        0 0 20px rgba(108, 99, 255, 0.3),
+        0 0 40px rgba(78, 205, 196, 0.2),
+        0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== FLOATING ANIMATION ===== */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* ===== PULSE ANIMATION ===== */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* ===== SHINE EFFECT ===== */
+@keyframes shine {
+    from {
+        left: -100%;
+    }
+    to {
+        left: 200%;
+    }
+}
+
+.shine-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    animation: shine 3s infinite;
+}
+
+/* ===== GRADIENT TEXT ===== */
+.gradient-text {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+/* ===== GLASS CARD ENHANCED ===== */
+.glass-card {
+    background: rgba(30, 30, 48, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        0 8px 32px 0 rgba(0, 0, 0, 0.37),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+}
+
+/* ===== SKILL BAR ANIMATION ===== */
+.skill-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    background: var(--gradient-accent);
+    border-radius: 10px;
+    width: 0;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    animation: shimmerSkill 2s infinite;
+}
+
+@keyframes shimmerSkill {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.skill-bar.animate .skill-bar-fill {
+    width: var(--skill-percent);
+}
+
+/* ===== SECTION DIVIDER ===== */
+.section-divider {
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-accent);
+    margin: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-divider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.8),
+        transparent
+    );
+    animation: dividerSlide 3s infinite;
+}
+
+@keyframes dividerSlide {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 200%;
+    }
+}
+
+/* ===== PARTICLE TRAIL CURSOR ===== */
+.cursor-particle {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    animation: particleFade 1s ease-out forwards;
+}
+
+@keyframes particleFade {
+    to {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+/* ===== LOADING DOTS ===== */
+.loading-dots {
+    display: inline-flex;
+    gap: 8px;
+}
+
+.loading-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    animation: dotBounce 1.4s infinite ease-in-out both;
+}
+
+.loading-dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.loading-dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes dotBounce {
+    0%, 80%, 100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}
+
+/* ===== MOBILE OPTIMIZATIONS ===== */
+@media (max-width: 768px) {
+    .gradient-blob {
+        width: 300px;
+        height: 300px;
+    }
+
+    .custom-cursor,
+    .custom-cursor-dot {
+        display: none;
+    }
+
+    [data-count] {
+        font-size: 2rem;
+    }
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .gradient-blob,
+    .floating,
+    .pulse {
+        animation: none !important;
+    }
+}
+
+/* ===== SELECTION STYLING ===== */
+::selection {
+    background: var(--secondary-color);
+    color: white;
+}
+
+::-moz-selection {
+    background: var(--secondary-color);
+    color: white;
+}
+
+/* ===== SMOOTH TRANSITIONS ===== */
+* {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+
+/* Hardware acceleration for smooth animations */
+.project-card,
+.skill-card,
+.achievement-card,
+.experience-card,
+.education-card,
+.scroll-animate {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+/* Prevent flickering during scroll */
+section,
+.hero-content,
+.about-grid,
+.experience-grid {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+/* Optimize repaints */
+.custom-cursor,
+.scroll-progress-bar {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Stop will-change after animation completes */
+.scroll-animate.animate {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.scroll-animate.animate.animation-complete {
+    will-change: auto;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        will-change: auto !important;
+    }
+}
+
+/* GPU acceleration for transforms */
+@media (min-width: 769px) {
+    .project-card:hover,
+    .skill-card:hover,
+    .achievement-card:hover {
+        transform: translateY(-8px) translateZ(0);
+        -webkit-transform: translateY(-8px) translateZ(0);
+    }
+}
+
+/* Optimize gradient blob performance */
+.gradient-blobs {
+    will-change: transform;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+.gradient-blob {
+    will-change: transform;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+/* Prevent layout shift */
+.scroll-animate {
+    contain: layout style paint;
+}
+
+/* Optimize particles canvas */
+.particles-canvas {
+    will-change: auto;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+/* Reduce opacity flickering */
+.scroll-animate {
+    transition: opacity 0.01s ease;
+}
+
+.scroll-animate.animate {
+    transition: none;
+}
+
+/* Prevent reflow during scroll */
+body {
+    contain: layout style;
+}
+
+/* Optimize cursor performance */
+@media (min-width: 769px) {
+    .custom-cursor {
+        pointer-events: none;
+        position: fixed;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+}
